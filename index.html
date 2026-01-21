@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A UI/UX Designer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #3742fa;
+            text-decoration: none;
+        }
+
+        .header a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .header a:hover {
+            color: #3742fa;
+        }
+
+        .navbar .fa {
+            margin-left: 15px;
+            color: #3742fa;
+            font-size: 20px;
+        }
+
+        /* INTRO */
+        .intro {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 60px 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+        }
+
+        .intro-text h1 {
+            font-size: 32px;
+        }
+
+        .intro-text p {
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .intro-text button {
+            background: #3742fa;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .profile-img {
+            max-width: 250px;
+            border-radius: 12px;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+        }
+
+        .about h4 {
+            color: #3742fa;
+        }
+
+        .about h2 {
+            margin-bottom: 30px;
+        }
+
+        .box {
+            background: #f4f4f4;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .number {
+            font-size: 80px;
+            color: #3742fa;
+            font-weight: 800;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            flex: 1;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat h2 {
+            color: #3742fa;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        /* BRANDS */
+        .brands {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .brand-card {
+            background: #fff;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, .05);
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+        }
+
+        .subtitle {
+            color: #3742fa;
+            font-weight: 600;
+        }
+
+        .title {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .desc {
+            max-width: 600px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: #f4f4f4;
+            border-radius: 12px;
+            padding: 15px;
+            transition: .3s;
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tags span {
+            background: #e0e4ff;
+            color: #3742fa;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .portfolio-card button {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .portfolio-card.active {
+            border: 2px solid #7b61ff;
+        }
+
+        .portfolio-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .portfolio-btn button {
+            background: #3742fa;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* PRICING */
+        .pricing {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .pricing h5 {
+            color: #3742fa;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pricing h1 {
+            font-size: 36px;
+            margin: 5px 0;
+        }
+
+        .pricing p {
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .price-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-card h2 {
+            font-size: 28px;
+            color: #2b2b5f;
+            margin: 0;
+        }
+
+        .price-card span {
+            font-size: 16px;
+            color: #999;
+            margin-left: 5px;
+        }
+
+        .price-card h3 {
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #2b2b5f;
+        }
+
+        .price-card p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .price-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+
+        .price-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price-card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #3742fa;
+            font-weight: bold;
+        }
+
+        .price-card button {
+            margin-top: 15px;
+            width: 100%;
+            background: #3742fa;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media(max-width:768px) {
+
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .price-grid {
+                flex-direction: column;
+            }
+
+        }
+
+        /* --- BLOG SECTION --- */
+        .blog {
+
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            /* max-width: 1100px;
+            margin: 40px auto;
+            padding: 45px;*/
+            background: #fff;
+            /* border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);*/
+            /*max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 50px;*/
+        }
+
+        .blog-header h5 {
+            color: #3742fa;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .blog-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .blog-info-box {
+            border: 2px solid #3742fa;
+            padding: 8px 10px;
+
+            /*display: inline-block;*/
+            margin-bottom: 20px;
+            color: #ddd;
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .blog-grid {
+            /* display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;*/
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+
+            background: #f4f4f4;
+            border-radius: 12px;
+            padding: 15px;
+            transition: .3s;
+
+            /*background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding-bottom: 20px;*/
+        }
+
+        .blog-card button {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .blog-card .date-badge {
+            background: #e0e0e0;
+            padding: 4px 10px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            /*border-radius: 4px;*/
+            display: inline-block;
+            margin: 15px;
+            font-weight: 600;
+        }
+
+        .blog-card img {
+            /*  width: 60%;
+            
+            border-radius: 6px;
+            margin-bottom: 15px;*/
+
+            width: calc(100% - 40px);
+            margin: 0 15px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+
+        .blog-content {
+            padding: 8px 14px;
+            /*padding: 15px 20px;*/
+        }
+
+        .blog-content h3 {
+            color: #3742fa;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 14px;
+        }
+
+        .read-now-btn {
+            background: #3742fa;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            max-width: 1100px;
+            margin: 80px auto;
+            background: #f9f9f9;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-form {
+            flex: 1.2;
+            padding: 50px;
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .contact-form p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid transparent;
+            background: #ececec;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #3742fa;
+            background: #fff;
+        }
+
+        .send-btn {
+            width: 100%;
+            background: #3742fa;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .contact-visual {
+            flex: 1;
+            position: relative;
+            background: #000;
+        }
+
+        .contact-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .quote-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            color: #fff;
+        }
+
+        .quote-overlay p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-img {
+                margin-top: 30px;
+            }
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            max-width: 1100px;
+            margin: 80px auto;
+            background: #f9f9f9;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-form {
+            flex: 1.2;
+            padding: 50px;
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .contact-form p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid transparent;
+            background: #ececec;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #3742fa;
+            background: #fff;
+        }
+
+        .send-btn {
+            width: 100%;
+            background: #3742fa;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .contact-visual {
+            flex: 1;
+            position: relative;
+            background: #000;
+        }
+
+        .contact-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .quote-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            color: #fff;
+        }
+
+        .quote-overlay p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-img {
+                margin-top: 30px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background: #f5f5f5;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            /* --- NAVBAR --- */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 40px;
+                background: #fff;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: 800;
+                color: #3742fa;
+                text-decoration: none;
+            }
+
+            .header a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+            }
+
+            .header a:hover {
+                color: #3742fa;
+            }
+
+            .nav-socials .fa-brands,
+            .nav-socials .fa-solid {
+                margin-left: 15px;
+                color: #3742fa;
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+            /* --- SECTIONS COMMON --- */
+            section {
+                max-width: 1100px;
+                margin: 40px auto;
+                padding: 60px 40px;
+                background: #fff;
+                border-radius: 14px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+            }
+
+            /* --- INTRO --- */
+            .intro {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .intro-text h1 {
+                font-size: 38px;
+                line-height: 1.2;
+            }
+
+            .intro-text p {
+                margin: 15px 0;
+                color: #555;
+            }
+
+            .intro-text button {
+                background: #3742fa;
+                color: #fff;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+
+            .profile-img {
+                max-width: 250px;
+                border-radius: 12px;
+            }
+
+            /* --- FAQ SECTION (From Image) --- */
+            /*  * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Inter', sans-serif;
+            }*/
+
+            /* FAQ SECTION */
+            /*  .faq-container {
+                background-color: #f8f9fa;*/
+            /* Light gray from image */
+            /*  padding: 100px 10%;
+                color: #111;
+            }
+
+            .faq-label {
+                color: #1018ba;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .faq-title {
+
+                display: flex;
+                align-items: center;
+
+
+                gap: 20px;*/
+            /* 👈 increase this */
+            /*  }
+        
+
+        .faq-description {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            max-width: 700px;
+        }*/
+
+            /* Accordion Style */
+            /* .faq-wrapper {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #777;
+            padding: 0 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            gap: 20px;
+        }
+
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .faq-content {
+            padding-bottom: 20px;
+            color: #777;
+            font-size: 14px;
+            line-height: 1.6;
+            display: none;*/
+            /* Only first one is open in picture */
+            /* }
+
+        .faq-item.active .faq-content {
+            display: block;
+        }*/
+
+
+            /* .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.faq-label { color: #3b82f6; font-weight: bold; margin-bottom: 8px; }
+.faq-title { font-size: 2rem; margin-bottom: 12px; }
+.faq-description { color: #666; margin-bottom: 40px; line-height: 1.6; }*/
+
+            /* The FAQ Items */
+            /*.faq-list {
+  display: flex;
+  flex-direction: column;*/
+            /*gap: 0; /* Keeps lines touching or add 10px for spacing */
+            /*}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+/* Summary styling (The Question) */
+            /*summary {
+  list-style: none;*/
+            /* Removes default arrow */
+            /*display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+summary::-webkit-details-marker { display: none; } /* Safari fix */
+
+            /*.faq-answer {
+  padding-top: 15px;
+  color: #555;
+  transition: all 0.3s ease;
+}*/
+            .faq-label {
+                color: #3b82f6;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            .faq-title {
+                font-size: 2rem;
+                margin-bottom: 12px;
+            }
+
+            .faq-description {
+                color: #666;
+                margin-bottom: 40px;
+                line-height: 1.6;
+            }
+
+            /* The FAQ Items */
+            .faq-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                background-color: black;
+                /* Keeps lines touching or add 10px for spacing */
+            }
+
+            .faq-item {
+                border-bottom: 1px solid #ddd;
+                padding: 15px 0;
+                cursor: pointer;
+            }
+
+            /* Summary styling (The Question) */
+            summary {
+                list-style: none;
+                /* Removes default arrow */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            summary::-webkit-details-marker {
+                display: none;
+            }
+
+            /* Safari fix */
+
+            .faq-answer {
+                padding-top: 15px;
+                color: #555;
+                transition: all 0.3s ease;
+            }
+            /* FOOTER SECTION */
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 80px 10% 40px 10%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.2fr 1.5fr 1fr;
+            gap: 30px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .footer-col ul li:hover {
+            color: #fff;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .contact-info span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .faq-title { font-size: 28px; }
+        }
+
+            /* Why the original code "stair-stepped": */
+
+            /* FOOTER SECTION */
+
+            /*footer {
+                background-color: #111111;
+                color: #ffffff;
+                padding: 80px 10% 40px 10%;
+            }
+
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1.2fr 1.5fr 1fr;
+                gap: 30px;
+                border-bottom: 1px solid #222;
+                padding-bottom: 60px;
+            }
+
+            .footer-logo {
+                font-size: 32px;
+                font-weight: 800;
+                letter-spacing: 1px;
+            }
+
+            .footer-col h4 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 25px;
+                color: #fff;
+            }
+
+            .footer-col ul {
+                list-style: none;
+            }
+
+            .footer-col ul li {
+                color: #999;
+                font-size: 14px;
+                margin-bottom: 12px;
+                cursor: pointer;
+            }
+
+            .footer-col ul li:hover {
+                color: #fff;
+            }
+
+            .contact-info {
+                font-size: 14px;
+                color: #999;
+                margin-bottom: 10px;
+            }
+
+            .contact-info span {
+                color: #fff;
+                font-weight: 600;
+            }
+
+            .social-links {
+                display: flex;
+                gap: 20px;
+            }
+
+            .social-links a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+                opacity: 0.8;
+            }
+
+            .social-links a:hover {
+                opacity: 1;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                padding-top: 30px;
+                color: #555;
+                font-size: 13px;
+            }*/
+
+            /* Mobile responsiveness */
+            /*@media (max-width: 900px) {
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .faq-title {
+                    font-size: 28px;
+                }
+            }*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a class="logo">Portfolio</a>
+        <div class="header">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#">Project</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <a class="fa fa-facebook"></a>
+            <a class="fa fa-instagram"></a>
+            <a class="fa fa-linkedin"></a>
+        </div>
+    </nav>
+
+    <!-- INTRO -->
+    <section class="intro">
+        <div class="intro-text">
+            <h1>Hello</h1>
+            <h1>I'm Mainuddin Chisty</h1>
+            <h1>A UI/UX Designer</h1>
+            <p>A personal portfolio is a collection of work, achievements and skills.</p>
+            <button>View Portfolio</button>
+        </div>
+        <img src="iiiii.png" class="profile-img">
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <h4>About Me</h4>
+        <h2>Learn About Me</h2>
+
+        <div class="box">
+            <div class="number">10</div>
+            <h3>Years of Experience</h3>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <h2>20K+</h2>
+                <p>Projects</p>
+            </div>
+            <div class="stat">
+                <h2>5K+</h2>
+                <p>Components</p>
+            </div>
+            <div class="stat">
+                <h2>10K+</h2>
+                <p>Reviews</p>
+            </div>
+            <div class="stat">
+                <h2>1000+</h2>
+                <p>Clients</p>
+            </div>
+        </div>
+
+        <div class="projects">
+            <div class="project">
+                <h3>UI/UX Design</h3>
+                <p>251 projects</p>
+            </div>
+            <div class="project">
+                <h3>Web Design</h3>
+                <p>180 projects</p>
+            </div>
+            <div class="project">
+                <h3>Brand Design</h3>
+                <p>95 projects</p>
+            </div>
+            <div class="project">
+                <h3>Product Design</h3>
+                <p>120 projects</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="brands">
+        <h3>You Can Find Me On</h3>
+        <div class="brand-grid">
+            <div class="brand-card">Discord</div>
+            <div class="brand-card">Upwork</div>
+            <div class="brand-card">ClickUp</div>
+            <div class="brand-card">Zoom</div>
+            <div class="brand-card">Google Meet</div>
+            <div class="brand-card">Miro</div>
+            <div class="brand-card">Adobe</div>
+            <div class="brand-card">Canva</div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+        <h5 class="subtitle">Recent Portfolio</h5>
+        <h2 class="title">Transforming Ideas into Exceptional</h2>
+        <p>Ten years of experience or ten years worth of experience are both correct.</p>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="c14682f8c6585d4281b8ddeea888395a5edb9056.jpg" alt="Logo Design">
+                <h3>Logo Design Branding</h3>
+                <div class="tags">
+                    <span>Branding</span>
+                    <span>Logo</span>
+                </div>
+                <button>View Details</button>
+            </div>
+
+            <div class="portfolio-card ">
+                <img src="14bc3ee85513644dc49740b378831ad039076d57.png" alt="Social Media Design">
+                <h3>Social Media Design</h3>
+                <div class="tags">
+                    <span>Branding</span>
+                    <span>Logo</span>
+                </div>
+                <button>View Details</button>
+            </div>
+
+            <div class="portfolio-card">
+                <img src="deb800ae8c8ea2318f430190b3d6633fd4b7bcdf.png" alt="UI Design">
+                <h3>UI Design</h3>
+                <div class="tags">
+                    <span>Branding</span>
+                    <span>UI</span>
+                </div>
+                <button>View Details</button>
+            </div>
+
+            <div class="portfolio-card">
+                <img src="028fad36c41c637b5320cac8924074b4cb5cf5ba.png" alt="Web Design">
+                <h3>Web Design</h3>
+                <div class="tags">
+                    <span>Branding</span>
+                    <span>Web</span>
+                </div>
+                <button>View Details</button>
+            </div>
+        </div>
+
+        <div class="portfolio-btn">
+            <button>View All Portfolio</button>
+        </div>
+    </section>
+
+    <!--Start  'PRICING' section -->
+
+    <section class="pricing">
+        <h5>My Price Plan</h5>
+        <h1>Enhancing Collaboration</h1>
+        <h1>between Remote</h1>
+        <p>Ten years of experience or ten years worth of experience are both correct.</p>
+
+        <div class="price-grid">
+            <div class="price-card">
+                <h2>$20 <span>/month</span></h2>
+                <h3>Intro</h3>
+                <p>For most businesses that want to optimize web queries</p>
+                <ul>
+                    <li>All limited links</li>
+                    <li>Own analytics platform</li>
+                    <li>Chat support</li>
+                    <li>Optimize hashtags</li>
+                    <li>Unlimited users</li>
+                </ul>
+                <button>Choose Plan</button>
+            </div>
+
+            <div class="price-card">
+                <h2>$50 <span>/month</span></h2>
+                <h3>Standard</h3>
+                <p>Best for growing businesses</p>
+                <ul>
+                    <li>Unlimited links</li>
+                    <li>Analytics platform</li>
+                    <li>Priority chat support</li>
+                    <li>Advanced optimization</li>
+                    <li>Unlimited users</li>
+                </ul>
+                <button>Choose Plan</button>
+            </div>
+
+            <div class="price-card">
+                <h2>$100 <span>/month</span></h2>
+                <h3>Premium</h3>
+                <p>Complete package for enterprises</p>
+                <ul>
+                    <li>Unlimited links</li>
+                    <li>Advanced analytics</li>
+                    <li>24/7 support</li>
+                    <li>Full optimization</li>
+                    <li>Unlimited users</li>
+                </ul>
+                <button>Choose Plan</button>
+
+
+
+            </div>
+        </div>
+
+        <!---Start 'BLOG' section-->
+
+        <section class="blog">
+            <h5 style="color: #3742fa;">Latest Blog</h5>
+            <h2>Transforming Ideas into Exceptional <br> Creations</h2>
+            <p>
+                Ten years of experience or Ten years worth of experience are both correct. Using the number 10 in place
+                of the word ten is also acceptable...
+            </p>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="tags" style="padding: 10px;color: #074830;"><span>6 November 2025</span></div>
+                    <img src="682c482811e92d9cd20941074e31e86158474cab (1).jpg" alt="Ocean">
+                    <div class="blog-content">
+                        <h3>Unraveling the Mysteries of the Ocean</h3>
+                        <p>From the mesmerizing marine life that inhabits the coral reefs to the vast uncharted
+                            depths...</p>
+                        <button class="read-btn" style="background-color: #3742fa;color: #ddd;">Read now</button>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="tags" style="padding: 10px;color: #E3E3E3;"><span>6 November 2025</span></div>
+                    <img src="682c482811e92d9cd20941074e31e86158474cab (1).jpg" alt="Ocean">
+                    <div class="blog-content">
+                        <h3>Unraveling the Mysteries of the Ocean</h3>
+                        <p>From the mesmerizing marine life that inhabits the coral reefs to the vast uncharted
+                            depths...</p>
+                        <button class="read-btn" style="background-color: #3742fa;color: #ddd;">Read now</button>
+                    </div>
+
+                </div>
+
+                <div class="blog-card">
+                    <div class="tags" style="padding: 10px;color: #E3E3E3;"><span>6 November 2025</span></div>
+                    <img src="682c482811e92d9cd20941074e31e86158474cab (1).jpg" alt="Ocean">
+                    <div class="blog-content">
+                        <h3>Unraveling the Mysteries of the Ocean</h3>
+                        <p>From the mesmerizing marine life that inhabits the coral reefs to the vast uncharted
+                            depths...</p>
+                        <button class="read-btn" style="background-color: #3742fa;color: #ddd;">Read now</button>
+                    </div>
+                </div>
+        </section>
+
+        <!----End 'BLOG'section---->
+
+        <!----Start '' section-->
+
+
+        <section class="contact-container">
+            <div class="contact-form">
+                <h2>Let's connect constellations</h2>
+                <p>Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.
+                </p>
+
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="Last Name">
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Phone Number">
+                    <textarea rows="4" placeholder="Message"></textarea>
+                    <button type="submit" class="send-btn">Send</button>
+                </form>
+            </div>
+
+            <div class="contact-visual">
+                <img src="666a6abefc9a86b4c60989f83f28983739b927b1.png" alt="Astronaut">
+                <div class="quote-overlay">
+                    <p>"Two lunar months revealed Earth's fragile beauty against vast silence, transforming my view of
+                        our place in the universe."</p>
+                    <small><strong>Irinel Traista</strong></small>
+                </div>
+            </div>
+        </section>
+
+        <!---End 'contact' section-->
+
+        <!-- ===== FAQ ===== -->
+        <!-----  <section class="faq-container">
+            <div class="faq-label">
+                
+                <span style="color: #1018ba;">FAQ</span>
+            </div>
+            <h2>Transforming Ideas into Meaningful Creations</h2>
+            <p class="faq-description">
+                Every idea starts small — my job is to shape it into something that connects, inspires, and stands out.
+                From visual design to storytelling, I focus on creating work that not only looks great but truly
+                represents your vision.
+            </p>
+
+            <div class="faq-wrapper" style="background-color:#999; ">
+                <div style="font-weight: bold;">
+                      <div class="faq-item">
+
+                    Where can I watch?
+                    <span style=" margin-top: 10px; ">+</span>
+                </div>
+                <div class="faq-content">
+                    Nibh quisque suscipit fermentum netus nulla cras porttitor euismod felis. Orci, dictumst nisl
+                    aliquet ut ullamcorper venenatis. Fermentum nulla congue feugiat purus nulla.
+                </div>
+                </div>
+
+
+              
+                    <div class="faq-wrapper" style="background-color:#999;">
+                        <div style="font-weight: bold;">
+                              <div class="faq-item">--->
+        <!----- <div class="faq-header">-->
+
+        <!---- Where can I watch?
+                            <span>+</span>
+
+                        </div>
+                        
+                
+                                <div class="faq-wrapper" style="background-color:#999; align-items: center;">
+                                    <div style="font-weight: bold;">
+                                        <div class="faq-item">
+                                        Where can I watch?
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                               
+            
+                                <div class="faq-wrapper" style="background-color:#999;">
+                                    <div style="font-weight: bold;">
+                                         <div class="faq-item">
+                                                Where can I watch?
+                                                <span >+</span>
+                                            </div>
+                                        </div>
+                                        <div class="faq-wrapper" style="background-color:#999;">
+                                            <div style="font-weight: bold;">
+                                                <div class="faq-item">
+                                                
+                                                        Where can I watch?
+                                                        <span>+</span>
+                                                    </div>
+                                                </div>
+                                                 
+                      
+                                <div class="faq-wrapper" style="background-color:#999;">
+                                    <div style="font-weight: bold;">
+                                               <div class="faq-item">
+                                                        Where can I watch?
+                                                        <span>+</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+        </section>--->
+        <section class="faq-container">
+            <p class="faq-label">FAQ</p>
+            <h2 class="faq-title">Transforming Ideas into Meaningful Creations</h2>
+            <p class="faq-description">
+                Every idea starts small — my job is to shape it into something that connects, inspires, and stands out.
+                From visual design to storytelling, I focus on creating work that not only looks great but truly
+                represents your vision.
+            </p>
+
+            <div class="faq-list" style="background-color:#777; display:flex; flex-direction:column; justify-items: center; align-items: center;">
+                <details class="faq-item">
+                    <summary style="font-weight: bold;">Where can I watch? <span class="icon">+</span></summary>
+                    <div class="faq-answer">
+                        <p>Your answer text goes here. This section will expand when clicked.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary style="font-weight: bold;">Where can I watch? <span class="icon">+</span></summary>
+                    <div class="faq-answer">
+                        <p>Your answer text goes here.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary style="font-weight: bold;">Where can I watch? <span class="icon">+</span></summary>
+                    <div class="faq-answer">
+                        <p>Your answer text goes here.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary style="font-weight: bold;">Where can I watch? <span class="icon">+</span></summary>
+                    <div class="faq-answer">
+                        <p>Your answer text goes here.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary style="font-weight: bold;">Where can I watch? <span class="icon">+</span></summary>
+                    <div class="faq-answer">
+                        <p>Your answer text goes here.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary style="font-weight: bold;">Where can I watch? <span class="icon">+</span></summary>
+                    <div class="faq-answer">
+                        <p>Your answer text goes here.</p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <br>
+        <div class="footer-col" style="background-color:black; display:flex; flex-direction:column; justify-items: center; align-items: center;>
+            <h4>Tickets & Booking</h4>
+            <ul>
+                <li>Lift Tickets</li>
+                <li>Season Passes</li>
+                <li>Vacation Packages</li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <div class="contact-info">Hotel Reservation: <span>123-456-7890</span></div>
+            <div class="contact-info">Ticket Office: <span>123-456-7890</span></div>
+        </div>
+        
+
+        <div class="footer-col">
+            <h4>Social</h4>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-wordpress"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2019 Mainuddin Chisty | All Rights Reserved
+        </div>
+        </footer>
+
+        <script>
+            // Simple script to toggle FAQ items
+            document.querySelectorAll('.faq-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const parent = header.parentElement;
+                    parent.classList.toggle('active');
+
+                    // Toggle between + and x
+                    const span = header.querySelector('span');
+                    if (parent.classList.contains('active')) {
+                        span.innerHTML = '&times;';
+                    } else {
+                        span.innerHTML = '+';
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>
